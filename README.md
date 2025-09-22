@@ -1,44 +1,67 @@
-#🌍 NatureLink
+# 🌍 NatureLink
 
-NatureLink is a cloud-native application that integrates Infrastructure as Code (IaC), automation, monitoring, and AI models for intelligent recommendations and content generation.
-It demonstrates end-to-end deployment on OpenStack, automated with Ansible, containerized with Docker & Kubernetes, and monitored with Prometheus & Grafana.
+NatureLink is a **cloud-native application** that integrates **Infrastructure as Code (IaC)**, automation, monitoring, and **AI models** for intelligent recommendations and content generation.  
 
-The application combines a Spring Boot backend with an Angular frontend, and integrates multiple AI models (LLM, NLP, CNN, Logistic Regression, Transformers, and DALL·E).
+It demonstrates **end-to-end deployment on OpenStack**, automated with **Ansible**, containerized with **Docker & Kubernetes**, and monitored with **Prometheus & Grafana**.  
 
-#🌐 Infrastructure
+The application combines a **Spring Boot backend** with an **Angular frontend**, and integrates multiple **AI models** (LLM, NLP, CNN, Logistic Regression, Transformers, and DALL·E).  
 
-Deployed on OpenStack with:
+---
 
-Keystone (Identity)
+## 🌐 Infrastructure  
 
-Nova (Compute)
+Deployed on **OpenStack** with:  
+- Keystone (Identity)  
+- Nova (Compute)  
+- Neutron (Networking)  
+- Octavia (Load Balancer)  
+- Heat (Orchestration)  
 
-Neutron (Networking)
+---
 
-Octavia (Load Balancer)
+## ⚙️ Automation & Monitoring  
 
-Heat (Orchestration)
+- Automated setup with **Ansible**  
+- Containerized with **Docker** and orchestrated by **Kubernetes**  
+- Real-time monitoring with **Prometheus & Grafana**  
 
-#⚙️ Automation & Monitoring
+---
 
-Automated setup with Ansible
+## 💻 Application  
 
-Containerized with Docker and orchestrated by Kubernetes
+- **Backend**: Spring Boot (Java)  
+- **Frontend**: Angular  
 
-Real-time monitoring with Prometheus & Grafana
+---
 
-#💻 Application
+## 🤖 AI Models  
 
-Backend: Spring Boot (Java)
+- **LLM-based Recommender**: Custom-built **Large Language Model (LLM)** for semantic similarity, recommendation, and intelligent content generation.  
+- **CNN**: Image-based recognition and classification.  
+- **Transformers**: Context-aware recommendations and embeddings.  
+- **DALL·E Integration**: Image generation from text prompts.  
 
-Frontend: Angular
+---
 
-🤖 AI Models
+## 📊 Architecture Overview  
 
-LLM-based Recommender: Custom-built Large Language Model (LLM) for semantic similarity, recommendation, and intelligent content generation.
+```mermaid
+flowchart TD
+    User[User] -->|UI/UX| Angular[Angular Frontend]
+    Angular -->|REST API| SpringBoot[Spring Boot Backend]
+    SpringBoot -->|AI Requests| PythonAI[AI Microservices]
+    PythonAI --> LLM[LLM Recommender]
+    PythonAI --> CNN[CNN]
+    PythonAI --> Trans[Transformers]
+    PythonAI --> Dalle[DALL·E]
 
-CNN: Image-based recognition and classification.
+    SpringBoot -->|DB Ops| MySQL[(MySQL Database)]
+    SpringBoot -->|Monitoring| Prometheus[Prometheus & Grafana]
 
-Transformers: Context-aware recommendations and embeddings.
-
-DALL·E Integration: Image generation from text prompts.
+    subgraph OpenStack Cloud
+        Keystone
+        Nova
+        Neutron
+        Octavia
+        Heat
+    end
