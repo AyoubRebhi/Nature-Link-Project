@@ -29,8 +29,9 @@ Deployed on **OpenStack** with:
 
 ## 💻 Application  
 
-- **Backend**: Spring Boot (Java)  
-- **Frontend**: Angular  
+- **Frontend (Angular)** 👉 [NatureLink-Front](https://github.com/AyoubRebhi/NatureLink-Front)  
+
+- **Backend (Spring Boot)** 👉 [NatureLink-Back-Correction](https://github.com/AyoubRebhi/NatureLink-Back-Correction)  
 
 ---
 
